@@ -27,10 +27,9 @@ public class TextUtils {
     public static String[] getWords(String text) {
 
 //        TODO write your code here
-        if(text == null) return new String[0];
-        text = text.trim();
-        if(text.equals("")) return new String[0];
-        return text.split(", ");
+
+
+        return null;
     }
     /**
      * @receive array with words
@@ -40,44 +39,20 @@ public class TextUtils {
 
 //        TODO write your code here
 
-        String[] tmp = new String[words.length];
-        int j = 0;
-        for (int i = 0; i < words.length; i++) {
-            if(isUnique(tmp, words[i])){
-                tmp[j] = words[i];
-                j++;
-            }
-        }
-
-        String[] uniqueWords = new String[j];
-         System.arraycopy(tmp, 0, uniqueWords, 0, j);
-        return uniqueWords;
+        return null;
     }
 
-    private static boolean isUnique(String[] src, String word) {
-        for (int i = 0; i < src.length; i++) {
-            if(word.equals(src[i])) return false;
-        }
-        return true;
-    }
-
-
-    /**
+     /**
      * @receive array with unique words
      * @return sorted by natural order array of unique words
      * */
     public static String[] sortWords(String[] uniqueWords) {
 
 //        TODO write your code here
-        for (int j = 0; j < uniqueWords.length; j++) {
-            for (int i = 0; i < uniqueWords.length - 1; i++) {
-                if(uniqueWords[i].compareTo(uniqueWords[i + 1]) > 0){
-                    String tmp = uniqueWords[i];
-                    uniqueWords[i] = uniqueWords[i + 1];
-                    uniqueWords[i + 1] = tmp;
-                }
-            }
-        }
-        return uniqueWords;
+
+
+
+
+        return null;
     }
 }
