@@ -8,7 +8,7 @@ public class TextUtils {
      * Method contains inside of its body three another methods.
      * Each of this method defined below.
      *
-     * @receive text
+     * @param  text
      * @return sorted by natural order array of unique words
      * */
     public static String[] getUniqueSortedWords(String text) {
@@ -18,7 +18,7 @@ public class TextUtils {
         return sortWords(words);
     }
     /**
-     * @receive text
+     * @param text
      * @return array with words, get from receive text
      *          if received argument is null
      *          or text length is zero
@@ -32,7 +32,7 @@ public class TextUtils {
         return null;
     }
     /**
-     * @receive array with words
+     * @param words array with words
      * @return  array with unique words
      * */
     public static String[] getUniqueWords(String[] words) {
@@ -43,7 +43,7 @@ public class TextUtils {
     }
 
      /**
-     * @receive array with unique words
+     * @param  uniqueWords array with unique words
      * @return sorted by natural order array of unique words
      * */
     public static String[] sortWords(String[] uniqueWords) {
