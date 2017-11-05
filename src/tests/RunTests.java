@@ -15,12 +15,23 @@ public class RunTests {
         String[] actual = TextUtils.getWords("cab; abc; cab; cab; bac; bac");
         Assert.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void testGetWords2(){
         String[] expected = {};
         String[] actual = TextUtils.getWords("");
         Assert.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void testIsUnique(){
+        String[] input = {"1","2","3"};
+        String target = "5";
+
+        boolean actual = TextUtils.isUnique(input,target);
+        Assert.assertEquals(true, actual);
+    }
+
     @Test
     public void testGetWords3(){
         String[] expected = {};

@@ -15,7 +15,7 @@ public class TextUtils {
 //        TODO find mistake and correct it, so the method works correctly
         String[] words = getWords(text);
         String[] uniqueWords = getUniqueWords(words);
-        return sortWords(words);
+        return sortWords(uniqueWords);
     }
     /**
      * @param text
@@ -25,11 +25,13 @@ public class TextUtils {
      *          return array with zero length
      * */
     public static String[] getWords(String text) {
-
+        if(text == null || text.isEmpty()){
+            return new String[0];
+        }
 //        TODO write your code here
 
 
-        return null;
+        return text.split("; ");
     }
     /**
      * @param words array with words
@@ -37,9 +39,43 @@ public class TextUtils {
      * */
     public static String[] getUniqueWords(String[] words) {
 
+        String[] result = new String[words.length];
+        int count = 0;
+
+        for (int i = 0; i < words.length; i++) {
+            if(isUnique(result,words[i])){
+                result[count++] = words[i];
+            }
+        }
+
 //        TODO write your code here
 
-        return null;
+        return splitArr(result,count);
+    }
+
+    private static String[] splitArr(String[] input, int lenght) {
+        String[] res = new String[lenght];
+        for (int i = 0; i < lenght; i++) {
+            res[i] = input[i];
+        }
+
+        return res;
+
+    }
+
+    public static boolean isUnique(String[] arr, String target){
+        if(arr == null || arr.length == 0){
+            return false;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if(target.equals(arr[i])){
+                return false;
+            }
+        }
+
+        return true;
+
     }
 
      /**
@@ -49,10 +85,27 @@ public class TextUtils {
     public static String[] sortWords(String[] uniqueWords) {
 
 //        TODO write your code here
+        // selection sort
+
+        for (int i = 0; i < uniqueWords.length; i++) {
+            int minI = i;
+            for (int j = i + 1; j < uniqueWords.length; j++) {
+                if(uniqueWords[j].compareTo(uniqueWords[minI]) < 0){
+                    minI = j;
+                }
+            }
+
+            swap(uniqueWords, i,  minI);
+        }
 
 
 
+        return uniqueWords;
+    }
 
-        return null;
+    private static void swap(String[] arr, int i, int j) {
+        String temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
